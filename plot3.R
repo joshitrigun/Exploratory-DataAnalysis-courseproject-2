@@ -1,4 +1,4 @@
-## This first line will likely take a few seconds. Be patient!
+## This first line will take time to load.
 if(!exists("NEI")){
   NEI <- readRDS("./data/summarySCC_PM25.rds")
 }
@@ -17,7 +17,6 @@ library(ggplot2)
 subsetNEI  <- NEI[NEI$fips=="24510", ]
 
 aggregatedTotalByYearAndType <- aggregate(Emissions ~ year + type, subsetNEI, sum)
-
 
 
 png("plot3.png", width=640, height=480)

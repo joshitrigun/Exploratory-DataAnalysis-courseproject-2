@@ -1,4 +1,4 @@
-## This first line will likely take a few seconds. Be patient!
+## This first line will take time to load.
 if(!exists("NEI")){
   NEI <- readRDS("./data/summarySCC_PM25.rds")
 }
@@ -16,7 +16,6 @@ library(ggplot2)
 
 # 24510 is Baltimore, see plot2.R
 # Searching for ON-ROAD type in NEI
-# Don't actually know it this is the intention, but searching for 'motor' in SCC only gave a subset (non-cars)
 subsetNEI <- NEI[NEI$fips=="24510" & NEI$type=="ON-ROAD",  ]
 
 aggregatedTotalByYear <- aggregate(Emissions ~ year, subsetNEI, sum)
